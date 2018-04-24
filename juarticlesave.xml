@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="content" method="upgrade">
+    <name>PLG_CONTENT_JUARTICLESAVE</name>
+    <creationDate>@date@</creationDate>
+    <author>Denys Nosov</author>
+    <authorEmail>denys@joomla-ua.org</authorEmail>
+    <authorUrl>https://joomla-ua.org</authorUrl>
+    <version>@version@</version>
+    <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+    <copyright>(C) 2018 Joomla! Ukraine. All rights reserved.</copyright>
+    <description>PLG_CONTENT_JUARTICLESAVE_XML_DESCRIPTION</description>
+
+    <files>
+        <folder>lib</folder>
+        <filename plugin="juarticlesave">juarticlesave.php</filename>
+        <filename>index.html</filename>
+    </files>
+
+    <languages>
+        <language tag="en-GB">language/en-GB.plg_content_juarticlesave.ini</language>
+        <language tag="en-GB">language/en-GB.plg_content_juarticlesave.sys.ini</language>
+    </languages>
+
+    <update>https://joomla-ua.org/update/plg/juarticlesave.xml</update>
+    <updateservers>
+        <server type="extension" priority="1" name="JUMobile">https://joomla-ua.org/update/plg/juarticlesave.xml</server>
+    </updateservers>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+
+                <field
+                        name="fix_date"
+                        type="radio"
+                        label="PLG_CONTENT_JUARTICLESAVE_FIX_DATE"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                        name="typo"
+                        type="radio"
+                        label="PLG_CONTENT_JUARTICLESAVE_USE_TYPO"
+                        class="btn-group btn-group-yesno"
+                        default="0"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+            </fieldset>
+
+        </fields>
+    </config>
+
+</extension>

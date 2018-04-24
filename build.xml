@@ -1,0 +1,71 @@
+<project name="juarticlesave" default="dist" basedir=".">
+
+    <property name="VERSION" value="1.0.0"/>
+
+    <tstamp>
+        <format property="DATE" pattern="%d.%m.%Y" />
+    </tstamp>
+
+    <property name="build" value="build"/>
+    <property name="dist" value="dist"/>
+    <property name="filename" value="plg_content_juarticlesave_v${VERSION}.zip"/>
+
+    <target name="init" depends="clean">
+
+        <mkdir dir="${build}"/>
+        <mkdir dir="${dist}"/>
+
+    </target>
+
+    <target name="replace">
+
+        <copy file="juarticlesave.xml" todir="${build}">
+            <filterchain>
+                <replacetokens>
+                    <token key="version" value="${VERSION}" />
+                    <token key="date" value="${DATE}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+
+    </target>
+
+    <target name="copy">
+
+        <copy todir="${build}/lib">
+            <fileset dir="lib">
+                <include name="**"/>
+            </fileset>
+        </copy>
+
+        <copy todir="${build}/language">
+            <fileset dir="language">
+                <include name="**"/>
+            </fileset>
+        </copy>
+
+        <copy file="juarticlesave.xml" todir="${build}"/>
+        <copy file="juarticlesave.php" todir="${build}"/>
+        <copy file="index.html" todir="${build}"/>
+
+    </target>
+
+    <target name="dist" depends="init, replace, copy">
+
+        <zip destfile="${dist}/${filename}">
+            <fileset dir="${build}/">
+                <include name="**/*"/>
+            </fileset>
+        </zip>
+
+        <delete dir="${build}"/>
+
+    </target>
+
+    <target name="clean">
+
+        <delete dir="${build}"/>
+
+    </target>
+
+</project>
