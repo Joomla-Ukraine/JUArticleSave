@@ -80,10 +80,10 @@ class PlgContentJUarticlesave extends JPlugin
 
 		if($this->params->def('typo', 0) == 1)
 		{
-			$article->title     = $this->_typo($article->title, 1);
+			$article->title     = $this->_typo($article->title, 0);
 			$article->introtext = $this->_typo($article->introtext);
 			$article->fulltext  = $this->_typo($article->fulltext);
-			$article->metadesc  = $this->_typo($article->metadesc, 1);
+			$article->metadesc  = $this->_typo($article->metadesc, 0);
 		}
 
 		return true;
