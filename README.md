@@ -1,6 +1,6 @@
 # JUArticleSave
 
-## Date in Joomla! Article
+## Date in Article
 
 * Fix date if publish up or created date is empty
 * Fix created date if filling publish up date
@@ -22,7 +22,7 @@ Please download only .zip file:
 
 ## What next?
 
-Send idia for Issues: https://github.com/Joomla-Ukraine/JUArticleSave/issues
+Send idea for Issues: https://github.com/Joomla-Ukraine/JUArticleSave/issues
 
 **Developer:** Denys Nosov, Joomla! Ukraine
 
