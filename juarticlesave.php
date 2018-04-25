@@ -70,7 +70,7 @@ class PlgContentJUarticlesave extends JPlugin
 			$msg_publis_up = '<strong>' . JText::_('COM_CONTENT_FIELD_PUBLISH_UP_LABEL') . ':</strong>&nbsp;&nbsp;&nbsp;' . JHtml::date($article->publish_up, 'Y-m-d H:i:s') . '<br>';
 			$msg_created   = '<strong>' . JText::_('COM_CONTENT_FIELD_CREATED_LABEL') . '</strong>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . JHtml::date($article->created, 'Y-m-d H:i:s');
 
-			$this->app->enqueueMessage($msg_publis_up . $msg_created, 'message');
+			$this->app->enqueueMessage($msg_publis_up . $msg_created, 'notice');
 		}
 
 		if($this->params->def('typo', 0) == 1)

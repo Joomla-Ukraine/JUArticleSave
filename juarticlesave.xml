@@ -7,7 +7,7 @@
     <authorUrl>https://joomla-ua.org</authorUrl>
     <version>@version@</version>
     <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
-    <copyright>(C) 2018 Joomla! Ukraine. All rights reserved.</copyright>
+    <copyright>(C) 2018 Joomla! Ukraine. All rights reserved!</copyright>
     <description>PLG_CONTENT_JUARTICLESAVE_XML_DESCRIPTION</description>
 
     <files>
@@ -23,11 +23,12 @@
 
     <update>https://joomla-ua.org/update/plg/juarticlesave.xml</update>
     <updateservers>
-        <server type="extension" priority="1" name="JUMobile">https://joomla-ua.org/update/plg/juarticlesave.xml</server>
+        <server type="extension" priority="1" name="JUArticleSave">https://joomla-ua.org/update/plg/juarticlesave.xml</server>
     </updateservers>
 
     <config>
         <fields name="params">
+
             <fieldset name="basic">
 
                 <field
@@ -56,5 +57,4 @@
 
         </fields>
     </config>
-
 </extension>
