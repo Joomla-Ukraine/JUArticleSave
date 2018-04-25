@@ -57,25 +57,20 @@ class PlgContentJUarticlesave extends JPlugin
 			date_default_timezone_set('UTC');
 			$datenow = date('Y-m-d H:i:s');
 
-			if($isNew)
+			if($article->publish_up == '0000-00-00 00:00:00' || $article->publish_up == null || $article->publish_up == '')
 			{
 				$article->publish_up = $datenow;
 				$article->created    = $datenow;
 			}
 			else
 			{
-				if($article->publish_up == '0000-00-00 00:00:00' || $article->publish_up == null || $article->publish_up == '')
-				{
-					$article->publish_up = $datenow;
-					$article->created    = $datenow;
-				}
-				else
-				{
-					$article->created = $article->publish_up;
-				}
+				$article->created = $article->publish_up;
 			}
 
-			$this->app->enqueueMessage('<strong>' . JText::_('COM_CONTENT_FIELD_PUBLISH_UP_LABEL') . ':</strong>&nbsp;&nbsp;&nbsp;' . $article->publish_up . '<br><strong>' . JText::_('COM_CONTENT_FIELD_CREATED_LABEL') . '</strong>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $article->created, 'notice');
+			$msg_publis_up = '<strong>' . JText::_('COM_CONTENT_FIELD_PUBLISH_UP_LABEL') . ':</strong>&nbsp;&nbsp;&nbsp;' . JHtml::date($article->publish_up, 'Y-m-d H:i:s') . '<br>';
+			$msg_created   = '<strong>' . JText::_('COM_CONTENT_FIELD_CREATED_LABEL') . '</strong>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . JHtml::date($article->created, 'Y-m-d H:i:s');
+
+			$this->app->enqueueMessage($msg_publis_up . $msg_created, 'message');
 		}
 
 		if($this->params->def('typo', 0) == 1)
