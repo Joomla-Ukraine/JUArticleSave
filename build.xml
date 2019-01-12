@@ -1,6 +1,6 @@
 <project name="juarticlesave" default="dist" basedir=".">
 
-    <property name="VERSION" value="1.0.1"/>
+    <property name="VERSION" value="1.0.2"/>
 
     <tstamp>
         <format property="DATE" pattern="%d.%m.%Y" />
