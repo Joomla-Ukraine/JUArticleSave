@@ -55,18 +55,18 @@ class PlgContentJUarticlesave extends CMSPlugin
 	 */
 	public function onContentBeforeSave($context, $article, $isNew)
 	{
-		if( $context !== 'com_content.article' )
+		if($context !== 'com_content.article')
 		{
 			return true;
 		}
 
-		if( $this->params->def('fix_date', 0) == 1 )
+		if($this->params->def('fix_date', 0) == 1)
 		{
 			date_default_timezone_set('UTC');
 
 			$datenow = date('Y-m-d H:i:s');
 
-			if( $article->publish_up === '0000-00-00 00:00:00' || $article->publish_up === null || $article->publish_up == '' )
+			if($article->publish_up === '0000-00-00 00:00:00' || $article->publish_up === null || $article->publish_up == '')
 			{
 				$article->publish_up = $datenow;
 				$article->created    = $datenow;
@@ -82,7 +82,7 @@ class PlgContentJUarticlesave extends CMSPlugin
 			$this->app->enqueueMessage($msg_publis_up . $msg_created, 'notice');
 		}
 
-		if( $this->params->def('typo', 0) == 1 )
+		if($this->params->def('typo', 0) == 1)
 		{
 			$article->title     = $this->_typo($article->title, 0);
 			$article->introtext = $this->_typo($article->introtext);
@@ -111,12 +111,14 @@ class PlgContentJUarticlesave extends CMSPlugin
 
 		$typograf->set_text($text);
 		$typograf->setup([
-			'Text.paragraphs' => 'off',
-			'Text.breakline'  => 'off',
-			'OptAlign.all'    => 'off',
+			'Text.paragraphs'                  => 'off',
+			'Text.breakline'                   => 'off',
+			'OptAlign.all'                     => 'off',
+			'Nobr.spaces_nobr_in_surname_abbr' => 'off',
+			'Etc.split_number_to_triads'       => 'off'
 		]);
 
-		if( $tags == 0 )
+		if($tags == 0)
 		{
 			$result = html_entity_decode(strip_tags($typograf->apply()));
 		}
@@ -125,9 +127,9 @@ class PlgContentJUarticlesave extends CMSPlugin
 			$result = $typograf->apply();
 			$result = str_replace('<p></p>', '', $result);
 
-			if( !empty($pre[ 0 ]) )
+			if(!empty($pre[ 0 ]))
 			{
-				foreach( $pre[ 0 ] as $tag )
+				foreach($pre[ 0 ] as $tag)
 				{
 					$result = preg_replace('!#pre#!', $tag, $result, 1);
 				}
