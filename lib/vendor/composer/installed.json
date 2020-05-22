@@ -1,0 +1,90 @@
+[
+    {
+        "name": "emuravjev/mdash",
+        "version": "0.2.1",
+        "version_normalized": "0.2.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/vitalybaev/mdash-typograph-php.git",
+            "reference": "f6aab27bd9ed008b5c214b6f30e90bb468593cab"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/vitalybaev/mdash-typograph-php/zipball/f6aab27bd9ed008b5c214b6f30e90bb468593cab",
+            "reference": "f6aab27bd9ed008b5c214b6f30e90bb468593cab",
+            "shasum": ""
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.8 || ^5.7"
+        },
+        "time": "2017-01-13T05:02:06+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Emuravjev\\Mdash\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Public Domain"
+        ],
+        "authors": [
+            {
+                "name": "Vitaly Baev",
+                "email": "dj@vitalybaev.ru"
+            }
+        ],
+        "description": "PHP версия типографа Муравьева",
+        "keywords": [
+            "russian",
+            "typograph",
+            "Муравьев",
+            "русский",
+            "типограф"
+        ]
+    },
+    {
+        "name": "visavi/cleanup",
+        "version": "v1.5.2",
+        "version_normalized": "1.5.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/visavi/cleanup.git",
+            "reference": "fc13c6376fabe61522d4a3cfeab90e8555c1fbd2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/visavi/cleanup/zipball/fc13c6376fabe61522d4a3cfeab90e8555c1fbd2",
+            "reference": "fc13c6376fabe61522d4a3cfeab90e8555c1fbd2",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "time": "2019-12-08T16:59:14+00:00",
+        "bin": [
+            "cleanup"
+        ],
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Alexander Grigorev",
+                "email": "admin@visavi.net",
+                "homepage": "http://visavi.net"
+            }
+        ],
+        "description": "Cleaning vendor directory",
+        "homepage": "http://visavi.net",
+        "keywords": [
+            "clean",
+            "composer",
+            "vendor"
+        ]
+    }
+]

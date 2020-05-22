@@ -1,6 +1,6 @@
 <project name="juarticlesave" default="dist" basedir=".">
 
-    <property name="VERSION" value="1.0.3"/>
+    <property name="VERSION" value="1.0.4"/>
 
     <tstamp>
         <format property="DATE" pattern="%d.%m.%Y" />
@@ -34,7 +34,7 @@
 
         <copy todir="${build}/lib">
             <fileset dir="lib">
-                <include name="**"/>
+                <include name="vendor/**"/>
             </fileset>
         </copy>
 

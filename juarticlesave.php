@@ -6,14 +6,15 @@
  * @subpackage       plg_content_juarticlesave
  *
  * @author           Denys Nosov, denys@joomla-ua.org
- * @copyright        2018-2019 (C) Joomla! Ukraine, https://joomla-ua.org. All rights reserved.
+ * @copyright        2018-2020 (C) Joomla! Ukraine, https://joomla-ua.org. All rights reserved.
  * @license          GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 defined('_JEXEC') or die;
 
-require_once __DIR__ . '/lib/emt/EMT.php';
+require_once __DIR__ . '/lib/vendor/autoload.php';
 
+use Emuravjev\Mdash\Typograph;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Plugin\CMSPlugin;
@@ -104,18 +105,28 @@ class PlgContentJUarticlesave extends CMSPlugin
 	 */
 	public function _typo($text, $tags = 1)
 	{
-		$typograf = new EMTypograph();
+		$typograf = new Typograph();
 
 		preg_match_all('!(\[socpost\].*?\[/socpost\])!si', $text, $pre);
 		$text = preg_replace('!\[socpost\].*?\[/socpost\]!si', '#pre#', $text);
 
 		$typograf->set_text($text);
 		$typograf->setup([
-			'Text.paragraphs'                  => 'off',
-			'Text.breakline'                   => 'off',
-			'OptAlign.all'                     => 'off',
-			'Nobr.spaces_nobr_in_surname_abbr' => 'off',
-			'Etc.split_number_to_triads'       => 'off'
+			'Text.paragraphs'                   => 'off',
+			'Text.breakline'                    => 'off',
+			'OptAlign.all'                      => 'off',
+			'Nobr.spaces_nobr_in_surname_abbr'  => 'off',
+			'Nobr.nbsp_org_abbr'                => 'off',
+			'Nobr.nbsp_in_the_end'              => 'off',
+			'Nobr.phone_builder'                => 'off',
+			'Nobr.phone_builder_v2'             => 'off',
+			'Nobr.ip_address'                   => 'off',
+			'Nobr.dots_for_surname_abbr'        => 'off',
+			'Nobr.hyphen_nowrap_in_small_words' => 'off',
+			'Abbr.nobr_abbreviation'            => 'off',
+			'Abbr.nobr_acronym'                 => 'off',
+			'Etc.unicode_convert'               => 'off',
+			'Etc.split_number_to_triads'        => 'off'
 		]);
 
 		if($tags == 0)
